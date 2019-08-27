@@ -55,10 +55,8 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for:
             indexPath) as! tableViewCell
         
-        cell.textLbl.text = self.events[indexPath.row].short_title
-        cell.imgView.image = nil
-        cell.indicator.hidesWhenStopped = true
         cell.indicator.startAnimating()
+        cell.textLbl.text = self.events[indexPath.row].short_title
         
         if let imageData = self.events[indexPath.row].mainImage,
             let image = UIImage(data: imageData) {
